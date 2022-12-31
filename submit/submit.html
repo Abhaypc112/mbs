@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="col-lg-6 w3l-newsletter-form ps-lg-6 mt-lg-0 mt-md-5 mt-4">
+                <form action="" method="post" id="submit-form"  class="subscribe-wthree">
+                    <div class="flex-wrap subscribe-wthree-field">
+                        <input class="form-control" type="email" placeholder="Type Your Email Address" name="subscribe" required="" style="width: 25em;">
+                        <button class="btn btn-style btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </form>
+        </div>
+    </section>
+
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbytybbkdFBj4shgKqcphQO3J_GJVMxiqnsREqiYY2lMQRPm1X6jbWNQNAZs4sfm0ys/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
